@@ -1,14 +1,14 @@
 plugins {
-    id "org.jetbrains.kotlin.jvm" version "1.2.20"
+    id "org.jetbrains.kotlin.jvm" version "1.2.10"
     id "eclipse"
     id "idea"
     id "jaci.openrio.gradle.GradleRIO" version "2018.01.21"
 }
 
 def TEAM = 2186
-def ROBOT_CLASS = "frc.team2186.robot.Robot"
+def ROBOT_CLASS = "frc.team2186.robot.RobotKt"
 
-ext.kotlin_version = "1.2.20"
+ext.kotlin_version = "1.2.10"
 
 deploy {
     targets {
@@ -34,6 +34,7 @@ dependencies {
     compile wpilib()
     compile ctre()
     compile navx()
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 jar {
